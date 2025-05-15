@@ -9,20 +9,23 @@ from PyOverlayKit.overlay import Overlay
 if __name__ == "__main__":
     app = QApplication([])
 
-    # Create an instance of the Overlay
-    overlay = Overlay()
+    # 1. Create an instance of the Overlay
+    overlay = Overlay(
+        show_close_button=True,
+        close_behavior="exit",
+        close_button_color="#3C8DBC",
+        close_button_hover_color="#1F5A7A",
+        rounded=True,
+        corner_radius=20
+    )
+    overlay.set_background_opacity(0.5)
+    overlay.set_overall_opacity(0.9)
+    overlay.set_geometry(100, 100, 400, 200)
 
-    # Set custom background color and transparency
-    overlay.set_background_color(QColor(0, 0, 0, 150))  # Green with 150 transparency
-
-    # Set position and size
-    overlay.set_geometry(100, 100, 400, 200)  # x, y, width, height
-
-    # Create a grid layout and set it to the overlay
+    # 2. Create a grid layout and set it to the overlay
     grid_layout = QGridLayout()
     overlay.setLayout(grid_layout)
 
-    # Add widgets to the grid layout
     label1 = QLabel("Label 1")
     label2 = QLabel("Label 2")
     button1 = QPushButton("Button 1")
@@ -33,8 +36,7 @@ if __name__ == "__main__":
     grid_layout.addWidget(label2, 1, 0)   # Row 1, Column 0
     grid_layout.addWidget(button2, 1, 1)  # Row 1, Column 1
 
-    # Show the overlay
+    # 3. Show the overlay
     overlay.show()
 
-    # Run the application
     app.exec()
