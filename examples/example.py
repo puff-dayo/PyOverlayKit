@@ -1,8 +1,8 @@
-from PySide6.QtWidgets import QApplication, QLabel, QPushButton, QGridLayout
-from PySide6.QtGui import QColor
-
-import sys
 import os
+import sys
+
+from PySide6.QtWidgets import QApplication, QLabel, QPushButton, QGridLayout
+
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from PyOverlayKit.overlay import Overlay
 
@@ -31,10 +31,10 @@ if __name__ == "__main__":
     button1 = QPushButton("Button 1")
     button2 = QPushButton("Button 2")
 
-    grid_layout.addWidget(label1, 0, 0)   # Row 0, Column 0
-    grid_layout.addWidget(button1, 0, 1)  # Row 0, Column 1
-    grid_layout.addWidget(label2, 1, 0)   # Row 1, Column 0
-    grid_layout.addWidget(button2, 1, 1)  # Row 1, Column 1
+    grid_layout.addWidget(label1, 0, 0)
+    grid_layout.addWidget(button1, 0, 1)
+    grid_layout.addWidget(label2, 1, 0)
+    grid_layout.addWidget(button2, 1, 1)
 
     # 3. Show the overlay
     overlay.show()
